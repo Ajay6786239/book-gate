@@ -1,21 +1,12 @@
 import os
 from pathlib import Path
-import pymysql
-pymysql.install_as_MySQLdb()
 
-# Define the base directory
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-# Secret key
 SECRET_KEY = 't!m(8q3_7yzj8&1(b-f%q!c@17_d0r!8)*gq!@4g(7d3c#d)4z'
-
-# Debug mode
 DEBUG = False
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'BookLib.vercel.app', 'www.AjayLib.com']
 
-# Allowed hosts
-ALLOWED_HOSTS = [ '.vercel.app','127.0.0.1']
-
-# Database configuration
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
@@ -27,18 +18,10 @@ DATABASES = {
     }
 }
 
-# Static files configuration
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'BookLib', 'static', 'BookLib')
-]
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'BookLib', 'static', 'BookLib')]
 
-# Media files configuration
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-
-# Application definition
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -80,7 +63,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'myapp.wsgi.application'
 
-# Password validation
 AUTH_PASSWORD_VALIDATORS = [
     {'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator'},
     {'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator'},
@@ -88,39 +70,11 @@ AUTH_PASSWORD_VALIDATORS = [
     {'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator'},
 ]
 
-# Internationalization
 LANGUAGE_CODE = 'en-us'
 TIME_ZONE = 'UTC'
 USE_I18N = True
 USE_TZ = True
 
-# Static files (CSS, JavaScript, Images)
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-# Security settings
-CSRF_COOKIE_SECURE = True
-SESSION_COOKIE_SECURE = True
-SECURE_BROWSER_XSS_FILTER = True
-SECURE_CONTENT_TYPE_NOSNIFF = True
-SECURE_SSL_REDIRECT = True
-X_FRAME_OPTIONS = 'DENY'
-
-# Default primary key field type
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-# Logging configuration
-LOGGING = {
-    'version': 1,
-    'disable_existing_loggers': False,
-    'handlers': {
-        'file': {
-            'level': 'DEBUG',
-            'class': 'logging.FileHandler',
-            'filename': os.path.join(BASE_DIR, 'debug.log'),
-        },
-    },
-    'root': {
-        'handlers': ['file'],
-        'level': 'DEBUG',
-    },
-}
