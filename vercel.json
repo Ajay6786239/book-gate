@@ -28,11 +28,7 @@
       "dest": "/api/feedback/:id"
     }
   ],
-  "functions": {
-    "pages/api/users/**/*.js": {
-      "maxDuration": 30
-    }
-  },
+  
   "env": {
     "SECRET_KEY": "t!m(8q3_7yzj8&1(b-f%q!c@17_d0r!8)*gq!@4g(7d3c#d)4z",
     "DATABASE_URL": "mysql://root:14082004@your-database-host:3306/BookLib",
