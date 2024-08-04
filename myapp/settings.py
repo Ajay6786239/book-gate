@@ -10,13 +10,14 @@ ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'BookLib.vercel.app', 'www.AjayLib.co
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'BookLib',
-        'USER': 'root',
-        'PASSWORD': '14082004',
-        'HOST': 'localhost',
+        'NAME': 'your_db_name',
+        'USER': 'your_db_user',
+        'PASSWORD': 'your_db_password',
+        'HOST': 'your_db_host',
         'PORT': '3306',
-         'OPTIONS': {
+        'OPTIONS': {
             'autocommit': True,
+        },
     }
 }
 
