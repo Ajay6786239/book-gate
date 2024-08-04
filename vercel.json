@@ -2,7 +2,7 @@
   "version": 2,
   "builds": [
     {
-      "src": "vercel-build.sh",
+      "src": ".vercel-build.sh",
       "use": "@vercel/python",
       "config": {
         "maxLambdaSize": "50mb",
