@@ -1,9 +1,20 @@
 #!/bin/bash
-# Install dependencies
+
+# Exit immediately if a command exits with a non-zero status
+set -e
+
+# Install system dependencies
+apt-get update && apt-get install -y \
+    build-essential \
+    libssl-dev \
+    libffi-dev \
+    libmysqlclient-dev
+
+# Install Python dependencies
 pip install -r requirements.txt
 
-# Apply migrations
-python manage.py migrate
-
 # Collect static files
-python3.9 manage.py collectstatic --noinput
+python manage.py collectstatic --noinput
+
+# Apply database migrations
+python manage.py migrate
