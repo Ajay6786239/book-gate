@@ -3,13 +3,17 @@
   "builds": [
     {
       "src": "./vercel-build.sh",
-      "use": "@vercel/static-build"
+      "use": "@vercel/python",
+      "config": {
+        "maxLambdaSize": "50mb",
+        "runtime": "python3.12"
+      }
     }
   ],
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "/myapp/manage.py"
+      "dest": "myapp/manage.py"
     }
   ],
   "env": {
