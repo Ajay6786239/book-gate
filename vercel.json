@@ -1,49 +1,21 @@
 {
-  "version":2,
+  "version": 2,
   "builds": [
     {
-      "src": "myapp/wsgi.py",
-      "use": "@vercel/python",
-      "config": {
-        "maxLambdaSize": "50mb",
-        "runtime": "python3.9"
-      }
-      
-    },
-    {
       "src": ".vercel-build.sh",
-      "use":"@vercel/static-build",
-      "config":{
-        "distDir":"staticFiles_build"
-      }
+      "use": "@vercel/static-build"
     }
-    
   ],
   "routes": [
     {
-      "src": "/static/(.*)",
-      "dest": "/static/$1"
-    },
-    {
-        "src": "/(.*)",
-        "dest":"myapp/wsgi.py"
-    },
-    
-    {
-      "src": "/feedback/((?!general).*)",
-      "dest": "/api/feedback/general"
-    },
-    {
-      "src": "/feedback/:id",
-      "dest": "/api/feedback/:id"
+      "src": "/(.*)",
+      "dest": "/myapp/manage.py"
     }
   ],
-  
   "env": {
     "SECRET_KEY": "t!m(8q3_7yzj8&1(b-f%q!c@17_d0r!8)*gq!@4g(7d3c#d)4z",
     "DATABASE_URL": "mysql://root:14082004@your-database-host:3306/BookLib",
     "DEBUG": "false",
     "ALLOWED_HOSTS": "BookLib.vercel.app,www.AjayLib.com"
   }
- 
 }
