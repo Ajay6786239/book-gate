@@ -13,7 +13,7 @@ SECRET_KEY = 't!m(8q3_7yzj8&1(b-f%q!c@17_d0r!8)*gq!@4g(7d3c#d)4z'
 DEBUG = False
 
 # Allowed hosts
-ALLOWED_HOSTS = [ '.vercel.app']
+ALLOWED_HOSTS = [ '.vercel.app','127.0.0.1']
 
 # Database configuration
 DATABASES = {
