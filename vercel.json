@@ -34,8 +34,6 @@
     "DATABASE_URL": "mysql://root:14082004@your-database-host:3306/BookLib",
     "DEBUG": "false",
     "ALLOWED_HOSTS": "BookLib.vercel.app,www.AjayLib.com"
-  },
-  "scripts": {
-    "build": "next build"
   }
+ 
 }
